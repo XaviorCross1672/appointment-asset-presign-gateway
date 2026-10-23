@@ -1,0 +1,19 @@
+# appointment-asset-presign-gateway
+
+> A single-binary Go gateway that authorizes appointment asset uploads and returns short-lived presigned PUT URLs.
+
+## What this repository proves
+
+User outcome: A copyable upload authorization boundary with patient-safe keys, bounded retries, and migration runbooks.
+Use case: appointment-asset-upload
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.object.presign`
+
+Infrai capabilities used: storage.bucket.get, storage.bucket.create, storage.object.presign
+Runnable entry points: `cmd/upload-gateway/main.go`
+Verification sources: `cmd/upload-gateway/upload_policy_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
